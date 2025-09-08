@@ -46,8 +46,8 @@
             将 "images/your-image.jpg" 替换为你的实际图片路径！
             例如：src="my-picture.png" 或 src="photos/background.jpg"
         -->
-        <img class="centered-image" src="images/2025-林奕茵-作品集-建模渲染.jpg" alt="">
-        <img class="centered-image" src="images/2025-林奕茵-作品集-拍照精修.jpg" alt="">
+        <img class="centered-image" src="2025-linyiyin-1.jpg" alt="">
+        <img class="centered-image" src="2025-linyiyin-2.jpg" alt="">
     </div>
 </body>
 </html>
