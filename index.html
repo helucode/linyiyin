@@ -1,18 +1,61 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>林奕茵 2025 作品集</title>
-    
+    <style>
+        /* 基础样式：清除默认边距 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body 样式：允许滚动，并设置一个最小高度 */
+        body, html {
+            height: 100%;
+            width: 100%;
+            /* 不需要 overflow: hidden; 因为需要滚动 */
+        }
+
+        /* 主容器：确保内容居中 */
+        .container {
+            display: flex;
+            flex-direction: column; /* 垂直排列子元素 */
+            justify-content: flex-start; /* 从顶部开始 */
+            align-items: center; /* 水平居中 */
+            min-height: 100vh; /* 容器至少为视口高度 */
+            padding: 20px 0; /* 上下加一些内边距，让图片不贴边 */
+        }
+
+        /* 图片样式：固定宽度，高度自动，确保居中 */
+        .panorama-image {
+            width: 1920px; /* 严格按照要求固定宽度 */
+            height: auto; /* 高度根据图片比例自动计算 */
+            display: block; /* 消除图片下方的间隙 */
+            max-width: 100%; /* 添加响应式：在小屏幕上不超过屏幕宽度 */
+        }
+
+        /* （可选）响应式设计：在小屏幕上调整 */
+        @media (max-width: 1920px) {
+            .panorama-image {
+                width: 100%; /* 当屏幕小于1920px时，图片宽度变为100% */
+                padding: 0 10px; /* 左右加一点内边距 */
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <!-- 
-            将 "images/your-image.jpg" 替换为你的实际图片路径！
-            例如：src="my-picture.png" 或 src="photos/background.jpg"
+            将 "images/long-image.jpg" 替换为你的实际长条图片路径！
+            例如：src="panorama.jpg" 或 src="photos/my-long-pic.png"
         -->
-        <img src="2025-linyiyin-1.jpg" alt="">
-        <img src="2025-linyiyin-2.jpg" alt="">
+        <img class="panorama-image" src="2025-linyiyin-1.jpg" alt="">
+        <img class="panorama-image" src="2025-linyiyin-2.jpg" alt="">
     </div>
 </body>
 </html>
+
 
