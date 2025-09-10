@@ -12,36 +12,44 @@
             box-sizing: border-box;
         }
 
-        /* Body 样式：允许滚动，并设置一个最小高度 */
         body, html {
             height: 100%;
             width: 100%;
-            /* 不需要 overflow: hidden; 因为需要滚动 */
+            /* 背景色可选，如果图片有透明区域可以看到 */
+            background-color: #000;
         }
 
-        /* 主容器：确保内容居中 */
+        /* 主容器：确保内容始终居中 */
         .container {
             display: flex;
-            flex-direction: column; /* 垂直排列子元素 */
-            justify-content: flex-start; /* 从顶部开始 */
-            align-items: center; /* 水平居中 */
-            min-height: 100vh; /* 容器至少为视口高度 */
-            padding: 20px 0; /* 上下加一些内边距，让图片不贴边 */
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px 0; /* 上下加一些内边距 */
         }
 
-        /* 图片样式：固定宽度，高度自动，确保居中 */
-        .panorama-image {
-            width: 1920px; /* 严格按照要求固定宽度 */
-            height: auto; /* 高度根据图片比例自动计算 */
-            display: block; /* 消除图片下方的间隙 */
-            max-width: 100%; /* 添加响应式：在小屏幕上不超过屏幕宽度 */
+        /* 图片基础样式：高度自动，确保居中，响应式基础 */
+        .adaptive-image {
+            height: auto; /* 高度根据比例自动计算 */
+            display: block;
+            max-width: 100%; /* 默认情况下，最大宽度不超过屏幕 */
+            
+            /* 默认样式：适用于小屏幕 (移动设备) */
+            width: 100%;
         }
 
-        /* （可选）响应式设计：在小屏幕上调整 */
-        @media (max-width: 1920px) {
-            .panorama-image {
-                width: 100%; /* 当屏幕小于1920px时，图片宽度变为100% */
-                padding: 0 10px; /* 左右加一点内边距 */
+        /* 媒体查询：针对 1080p (1920x1080) 及以上屏幕 */
+        @media (min-width: 1920px) {
+            .adaptive-image {
+                width: 1440px; /* 在 1080p 屏幕上显示 1440px 宽 */
+            }
+        }
+
+        /* 媒体查询：针对 2K (2560x1440) 及以上屏幕 */
+        @media (min-width: 2560px) {
+            .adaptive-image {
+                width: 1920px; /* 在 2K+ 屏幕上显示 1920px 宽 */
             }
         }
     </style>
@@ -49,25 +57,25 @@
 <body>
     <div class="container">
         <!-- 
-            将 "images/long-image.jpg" 替换为你的实际长条图片路径！
-            例如：src="panorama.jpg" 或 src="photos/my-long-pic.png"
+            将 "images/my-long-image.jpg" 替换为你的实际长条图片路径！
         -->
-        <img class="panorama-image" src="1.jpg" alt="">
-        <img class="panorama-image" src="2.jpg" alt="">
-        <img class="panorama-image" src="3.jpg" alt="">
-        <img class="panorama-image" src="2025-作品集-建模渲染_01.jpg" alt="">
-        <img class="panorama-image" src="2025-作品集-建模渲染_02.jpg" alt="">
-        <img class="panorama-image" src="2025-作品集-建模渲染_03.jpg" alt="">
-        <img class="panorama-image" src="2025-作品集-建模渲染_04.jpg" alt="">
-        <img class="panorama-image" src="2025-作品集-建模渲染_05.jpg" alt="">
-        <img class="panorama-image" src="2025-作品集-建模渲染_06.jpg" alt="">
-        <img class="panorama-image" src="2025-作品集-建模渲染_07.jpg" alt="">
-        <img class="panorama-image" src="2025-作品集-建模渲染_08.jpg" alt="">
-        <img class="panorama-image" src="2025-作品集-建模渲染_09.jpg" alt="">
-        <img class="panorama-image" src="2025-作品集-建模渲染_10.jpg" alt="">
+        <img class="adaptive-image" src="1.jpg" alt="">
+        <img class="adaptive-image" src="2.jpg" alt="">
+        <img class="adaptive-image" src="3.jpg" alt="">
+        <img class="adaptive-image" src="2025-作品集-建模渲染_01.jpg" alt="">
+        <img class="adaptive-image" src="2025-作品集-建模渲染_02.jpg" alt="">
+        <img class="adaptive-image" src="2025-作品集-建模渲染_03.jpg" alt="">
+        <img class="adaptive-image" src="2025-作品集-建模渲染_04.jpg" alt="">
+        <img class="adaptive-image" src="2025-作品集-建模渲染_05.jpg" alt="">
+        <img class="adaptive-image" src="2025-作品集-建模渲染_06.jpg" alt="">
+        <img class="adaptive-image" src="2025-作品集-建模渲染_07.jpg" alt="">
+        <img class="adaptive-image" src="2025-作品集-建模渲染_08.jpg" alt="">
+        <img class="adaptive-image" src="2025-作品集-建模渲染_09.jpg" alt="">
+        <img class="adaptive-image" src="2025-作品集-建模渲染_10.jpg" alt="">
     </div>
 </body>
 </html>
+
 
 
 
